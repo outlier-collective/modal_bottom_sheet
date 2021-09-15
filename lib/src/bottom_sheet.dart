@@ -358,7 +358,7 @@ class _ModalBottomSheetState extends State<ModalBottomSheet>
 
     final mediaQuery = MediaQuery.of(context);
 
-    child = AnimatedBuilder(
+    return AnimatedBuilder(
       animation: widget.animationController,
       builder: (context, Widget? child) {
         assert(child != null);
@@ -404,11 +404,6 @@ class _ModalBottomSheetState extends State<ModalBottomSheet>
         );
       },
       child: RepaintBoundary(child: child),
-    );
-
-    return ScrollToTopStatusBarHandler(
-      child: child,
-      scrollController: _scrollController,
     );
   }
 }
