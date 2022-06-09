@@ -88,13 +88,8 @@ Future<T?> showBarModalBottomSheet<T>({
   bool enableDrag = true,
   Widget? topControl,
   Duration? duration,
+  RouteSettings? settings,
 }) async {
-  assert(context != null);
-  assert(builder != null);
-  assert(expand != null);
-  assert(useRootNavigator != null);
-  assert(isDismissible != null);
-  assert(enableDrag != null);
   assert(debugCheckHasMediaQuery(context));
   assert(debugCheckHasMaterialLocalizations(context));
   final result = await Navigator.of(context, rootNavigator: useRootNavigator)
@@ -117,6 +112,7 @@ Future<T?> showBarModalBottomSheet<T>({
     enableDrag: enableDrag,
     animationCurve: animationCurve,
     duration: duration,
+    settings: settings,
   ));
   return result;
 }
